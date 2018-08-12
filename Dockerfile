@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:wheezy
+FROM resin/rpi-raspbian:stretch
 RUN apt-get update && \
 apt-get upgrade -y && \ 
 apt-get install libspdlog-dev git wget gcc -y
