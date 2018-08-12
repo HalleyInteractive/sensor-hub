@@ -1,9 +1,7 @@
-FROM resin/rpi-raspbian
+FROM resin/rpi-raspbian:wheezy
 RUN apt-get update && \
 apt-get upgrade -y && \ 
-apt-get dist-upgrade -y && \
 apt-get install libspdlog-dev git wget gcc -y
-# apt-get install libspdlog-dev git -y
 
 RUN mkdir -p /usr/src/bcm2835 \
     && wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.56.tar.gz \
