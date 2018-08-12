@@ -1,7 +1,8 @@
 FROM resin/rpi-raspbian
 RUN apt-get update && \
 apt-get upgrade -y && \ 
-apt-get install git wget gcc -y
+apt-get dist-upgrade -y && \
+apt-get install libspdlog-dev git wget gcc -y
 # apt-get install libspdlog-dev git -y
 
 RUN mkdir -p /usr/src/bcm2835 \
@@ -17,7 +18,7 @@ RUN git clone https://github.com/intel-iot-devkit/mraa.git \
 && mkdir build \
 && cd build \
 && cmake .. -DBUILDSWIGNODE=OFF \
-&& sudo make install \
+&& sudo make install
 
 # RUN nano /etc/ld.so.conf \
 # && /usr/local/lib/arm-linux-gnueabihf 
