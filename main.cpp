@@ -60,7 +60,7 @@ int main () {
 
       float f_temperature = (float)payload.temperature / 10;
       float f_humidity = (float)payload.humidity / 10;
-      std::cout << "NODE:" << payload.id << " TEMP:" << f_temperature << " HUM:" << f_humidity
+      std::cout << "NODE:" << payload.id << " TEMP:" << f_temperature << " HUM:" << f_humidity;
       daily_logger->info("NODE:{0:d} TEMP:{1:f} HUM:{2:f}", payload.id, f_temperature, f_humidity);
     }
     delay(2000);
