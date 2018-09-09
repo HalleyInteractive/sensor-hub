@@ -1,0 +1,10 @@
+[Unit]
+ Description=Sensor Data Receiver
+ After=multi-user.target
+
+ [Service]
+ Type=idle
+ ExecStart= /home/pi/sensor-hub/main > /home/pi/logs/process.log
+
+ [Install]
+ WantedBy=multi-user.target
