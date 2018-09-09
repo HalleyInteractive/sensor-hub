@@ -56,11 +56,11 @@ int main () {
 
         float f_temperature = (float)payload.temperature / 10;
         float f_humidity = (float)payload.humidity / 10;
+        
+        sensor_logger->info("NODE:{0:d} TEMP:{1:.2f} HUM:{2:.2f}", payload.id, f_temperature, f_humidity);
       } catch (...) {
         debug_logger->error("Error reading network payload");
       }
-
-      sensor_logger->info("NODE:{0:d} TEMP:{1:.2f} HUM:{2:.2f}", payload.id, f_temperature, f_humidity);
     }
     std::this_thread::sleep_for(std::chrono::seconds(2));
   }
