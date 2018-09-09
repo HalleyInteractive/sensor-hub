@@ -14,7 +14,8 @@ RF24 radio(RPI_V2_GPIO_P1_15, BCM2835_SPI_CS0, BCM2835_SPI_SPEED_8MHZ);
 RF24Network network(radio);
 const uint16_t NODE_ADDRESS = 00;
 const uint16_t CHANNEL = 90;
-const string BASE_DIR = "/home/pi/";
+const std::string BASE_DIR = "/home/pi/";
+
 struct payload_t {
   uint16_t id;
   uint16_t temperature;
@@ -38,7 +39,7 @@ int main () {
   }
 
   std::this_thread::sleep_for(std::chrono::seconds(5));
-  debug_logger("Start network on channel 90, address 00");
+  debug_logger->info("Start network on channel 90, address 00");
   network.begin(CHANNEL, NODE_ADDRESS);
   radio.printDetails();
 
